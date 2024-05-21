@@ -1,0 +1,37 @@
+<body *ngIf="!simRunning">
+  <h1>Factory Configuration</h1>
+  <div class="container">
+    <label for="main-input">Days to Run:</label>
+    <input type="number" id="main-input" placeholder="Enter Days to Run"  min="1" max="1000" [(ngModel)]="daysToRun" name="daysToRun" (ngModelChange)="onInputChange('daysToRun', $event)">
+    <button type="button" id="run-button" (click)="runSim()">Run Sim</button>
+  </div>
+  <div class="additional-inputs">
+    <label for="close-rate">Close Rate:</label>
+    <input type="number" id="close-rate" placeholder="Enter Close Rate" min="0" max="1" [(ngModel)]="closeRate" name="closeRate" (ngModelChange)="onInputChange('closeRate', $event)">
+    <label for="reject-rate">Reject Rate:</label>
+    <input type="number" id="reject-rate" placeholder="Enter Reject Rate" min="0" max="1" [(ngModel)]="rejectRate" name="rejectRate" (ngModelChange)="onInputChange('rejectRate', $event)">
+    <label for="max-raw-bin">Max Raw  Bin:</label>
+    <input type="number" id="max-raw-bin" placeholder="Enter Max Raw Bin" min="1" max="500" [(ngModel)]="maxRawBin" name="maxRawBin" (ngModelChange)="onInputChange('maxRawBin', $event)">
+    <label for="restock-units">Restock Units:</label>
+    <input type="number" id="restock-units" placeholder="Enter Restock Units" min="1" max="100" [(ngModel)]="restockUnits" name="restockUnits" (ngModelChange)="onInputChange('restockUnits', $event)">
+    <label for="restock-time">Restock Time:</label>
+    <input type="number" id="restock-time" placeholder="Enter Restock Time" min="1" max="100" [(ngModel)]="restockTime" name="restockTime" (ngModelChange)="onInputChange('restockTime', $event)">
+    <label for="fix-time">Fix Time:</label>
+    <input type="number" id="fix-time" placeholder="Enter Fix Time" min="1" max="100" [(ngModel)]="fixTime" name="fixTime" (ngModelChange)="onInputChange('fixTime', $event)">
+    <label for="work-time">Work Time:</label>
+    <input type="number" id="work-time" placeholder="Enter Work Time" min="1" max="100" [(ngModel)]="workTime" name="workTime" (ngModelChange)="onInputChange('workTime', $event)">
+    <label for="workstations-number">Work Stations Number:</label>
+    <input type="number" id="workstations-number" placeholder="Enter Work Stations Number" min="1" max="100" [(ngModel)]="workstationsNumber" name="workstationsNumber" (ngModelChange)="onInputChange('workstationsNumber', $event)">
+    <div *ngFor="let num of getNumberArray(); let i = index">
+      <label for="workstation-{{i}}">Workstation {{i}} Rate:</label>
+      <input type="number" id="workstation-{{i}}" placeholder="Enter Work Stations Number" min="0" max="1" [(ngModel)]="workstationsRates[i]" name="workstationsRates{{i}}" (ngModelChange)="onInputChange('{{i}}', $event)">
+    </div>
+    <ion-toast></ion-toast>
+  </div>
+</body>
+<body *ngIf="simRunning">
+  <div style="height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.445); justify-content: center; align-items: center; display: flex; flex-direction: column;">
+    <h1>Simulating...</h1>
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  </div>
+</body>
