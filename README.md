@@ -7,12 +7,8 @@ Welcome to the Manufacturing Facility Simulation project! This project uses SimP
 1. [Overview](#overview)
 2. [Features](#features)
 3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Simulation Details](#simulation-details)
-6. [Web Dashboard](#web-dashboard)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Contact](#contact)
+4. [Contributing](#contributing)
+5. [License](#license)
 
 ## Overview
 
@@ -39,6 +35,7 @@ This project aims to simulate the workflows within a manufacturing facility, cap
 ```sh
 git clone https://github.com/AlbertoMorales24/Manufacturing-Simulation.git
 cd manufacturing-simulation
+```
 
 ### Python Dependencies
 
@@ -46,6 +43,17 @@ Install the required Python packages using pip:
 
 ```sh
 pip install simpy
+```
+
+### JavaScript Dependencies
+
+Navigate to the `dashboard` directory and install the necessary npm packages:
+
+```sh
+cd dashboard
+npm install
+npm install -g @ionic/cli
+```
 
 ## Contributing
 
