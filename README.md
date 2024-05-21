@@ -23,7 +23,7 @@ This project aims to simulate the workflows within a manufacturing facility, cap
 - **Discrete-Event Simulation**: Utilizes SimPy to model manufacturing processes.
 - **Resource Management**: Simulates the allocation and utilization of resources such as machines and workers.
 - **Process Flows**: Models various production stages, including assembly, quality control, and packaging.
-- **Interactive Dashboard**: A web-based dashboard that visualizes simulation results and key performance indicators (KPIs).
+- **Interactive Dashboard**: A web-based dashboard that visualizes simulation results.
 - **Data Export**: Exports simulation data to be visualized on the web dashboard.
 
 ## Installation
@@ -37,5 +37,27 @@ This project aims to simulate the workflows within a manufacturing facility, cap
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/yourusername/manufacturing-simulation.git
+git clone https://github.com/AlbertoMorales24/Manufacturing-Simulation.git
 cd manufacturing-simulation
+
+### Python Dependencies
+
+Install the required Python packages using pip:
+
+```sh
+pip install simpy
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Create a new Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
