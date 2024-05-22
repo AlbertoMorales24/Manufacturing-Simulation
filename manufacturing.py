@@ -65,15 +65,15 @@ class FactoryStatus(Enum):
         return str(self.name)
 
 DAYS = daysToRun
-TICKS_PER_DAY = 500 # Number of ticks that represent a day of production
-CLOSE_RATE = closeRate   # Probability of having a catastrophic accident and close that day
-REJECT_RATE = rejectRate  # Probability of rejecting a product at the end of the process
-MAX_RAW_BIN = maxRawBin    # The max number of items each station will have at any given time
-RESTOCK_UNITS = restockUnits   # Number of restock units that the factory will have
-RESTOCK_TIME = restockTime    # The average time units it takes the bus boy to restock a station
-FIX_TIME = fixTime        # The average time for fixing the station
-WORK_TIME = workTime       # The average working time for the stations
-WRK_STATIONS = workstationsNumber    # Number of work stations in the factory
+TICKS_PER_DAY = 500             # Number of ticks that represent a day of production
+CLOSE_RATE = closeRate          # Probability of having a catastrophic accident and close that day
+REJECT_RATE = rejectRate        # Probability of rejecting a product at the end of the process
+MAX_RAW_BIN = maxRawBin         # The max number of items each station will have at any given time
+RESTOCK_UNITS = restockUnits    # Number of restock units that the factory will have
+RESTOCK_TIME = restockTime      # The average time units it takes the bus boy to restock a station
+FIX_TIME = fixTime              # The average time for fixing the station
+WORK_TIME = workTime            # The average working time for the stations
+WRK_STATIONS = workstationsNumber        # Number of work stations in the factory
 WRK_STATION_RATES = workstationsRates    # Declared error rate of work stations
 DEBUG_LEVEL = Debug.ERROR
 
