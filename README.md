@@ -69,3 +69,10 @@ Contributions are welcome! If you'd like to contribute, please follow these step
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+### Team Members:
+1. Edgar Velazquez Mercado
+2. Pablo Raschid Llamas Aun
+3. Jose Ivan Andrade Rojas
+4. Alberto Morales Vizcarra
+5. Ángel Martínez Rodríguez 
