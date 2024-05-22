@@ -262,12 +262,10 @@ class Workstation(object):
         try:
             if self._status != WrkStationStatus.IDLE:
                 self.setStatus(WrkStationStatus.IDLE)
-            # Check if I have enough items to work
             if(self._binItems == 0):
                 with self._busBoy.request() as req:
                     debugLog(Debug.WARN, 'The workstation %d request restock at %.2f' % (self.id, self._env.now))
                     yield req
-                    # The resource is available
                     debugLog(Debug.DEBUG, 'The workstation %d request is being restocked at %.2f' % (self.id, self._env.now))
                     restock_time = abs(random.normalvariate(RESTOCK_TIME,1))
                     debugLog(Debug.DEBUG, "The workstation %d will take %.2f units of time to restock" % (self.id,restock_time))
@@ -276,7 +274,6 @@ class Workstation(object):
                     self._binItems = MAX_RAW_BIN
                     debugLog(Debug.DEBUG, "The workstation %d was restocked at %.2f" % (self.id,self._env.now))
                     self.setStatus(WrkStationStatus.IDLE)
-            # Check if there is the need to fix this work station
             if random.random() < self._errRate:
                 self.setStatus(WrkStationStatus.DOWN)
                 debugLog(Debug.WARN, 'The workstation %d presented a failure at %.2f' % (self.id, self._env.now))
@@ -285,7 +282,6 @@ class Workstation(object):
                 yield self._env.timeout(fixing_time)
                 debugLog(Debug.INFO, 'The workstation %d is back on line at %.2f' % (self.id, self._env.now))
                 self.setStatus(WrkStationStatus.IDLE)
-            # Process the product
             self._binItems -= 1
             self._totalProducts.append(self._product._id)
             self._totalProductsDays[self._factory._day].append(self._product._id)
